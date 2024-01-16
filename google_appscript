@@ -1,0 +1,10 @@
+function doGet(e) {
+  var sheet = SpreadsheetApp.openById('your_spreadsheet_ID').getSheetByName('your_sheet_name');
+  var username = e.parameter.name;
+  var location = e.parameter.location;
+  var rowData = [username, location];
+  sheet.appendRow(rowData);
+  return HtmlService.createHtmlOutput(
+    "<form action='https://ngl.link/p/sent?lng=en' method='get' id='foo'></form>" + 
+    "<script>document.getElementById('foo').submit();</script>");
+}

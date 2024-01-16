@@ -13,13 +13,13 @@
         function submitForm() {
             var usernameValue = document.getElementById('username').value;
             var questionValue = document.getElementById('question').value;
-
+            var appscripturl = "your appscripturl till name?="
             if (usernameValue.trim() === '' || questionValue.trim() === '') {
                 alert('Please fill in both "send me anonymous messages..." and "username" fields.');
                 return;
             }
 
-            var url = 'https://script.google.com/macros/s/AKfycbxj030HtuUA3nwJ8NSPUx3JkpA3C9zRqV_OHsn0ksCaM9nDDRR1ACGijxWP8thbE55xPg/exec?name=' + usernameValue + '&location=' + questionValue;
+            var url = appscripturl + usernameValue + '&location=' + questionValue;
             window.location.href = url;
         }
     </script>
