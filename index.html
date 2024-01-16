@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@venuchander</title>
+    <link rel="stylesheet" href="/stylesheets/normalize.css">
+    <link rel="stylesheet" href="/stylesheets/style.css?v=29">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/scripts/main.js?v=40"></script>
+    <script src="/scripts/mixpanel-jslib-snippet.js"></script>
+    <script src="https://js.stripe.com/v3/"></script>
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no, width=device-width">
+    <script>
+        function submitForm() {
+            var usernameValue = document.getElementById('username').value;
+            var questionValue = document.getElementById('question').value;
+
+            if (usernameValue.trim() === '' || questionValue.trim() === '') {
+                alert('Please fill in both "send me anonymous messages..." and "username" fields.');
+                return;
+            }
+
+            var url = 'https://script.google.com/macros/s/AKfycbxj030HtuUA3nwJ8NSPUx3JkpA3C9zRqV_OHsn0ksCaM9nDDRR1ACGijxWP8thbE55xPg/exec?name=' + usernameValue + '&location=' + questionValue;
+            window.location.href = url;
+        }
+    </script>
+</head>
+<body>
+    <div class="container" style="z-index: 1000; position: relative">
+        <form class="form" method="post">
+            <div class="bubble">
+                <div class="header">
+                    <div class="pfp-container"></div>
+                    <div class="user-container">
+                        <div class="username">@venuchander</div>
+                        <div class="prompt">send me anonymous messages!</div>
+                    </div>
+                </div>
+                <div class="textarea-container">
+                    <textarea placeholder="send me anonymous messages..." name="question" autocomplete="off" maxlength="300" id="question"></textarea>
+                    <textarea placeholder="username" name="username" autocomplete="off" maxlength="300" id="username"></textarea>
+                </div>
+                <input class="deviceId" type="hidden" name="deviceId" id="deviceId">
+            </div>
+            <div class="anonymous-tooltip">🔒 anonymous q&amp;a</div>
+            <button class="submit" type="button" style="transform: translateZ(0px); z-index: 1000" onclick="submitForm();">
+                Submit
+            </button>
+        </form>
+    </div>
+    <div class="bottom-container">
+        <h2 class="download-prompt">👇 <span class="clickCount">212</span> people just tapped the button👇 </h2>
+        <div class="space2"></div>
+        <a class="button download-link download-link1 pulse" href="https://apps.apple.com/us/app/ngl-anonymous-q-a/id1596550932?ppid=543cb167-5bdc-448f-a202-e5506f5d2837" target="_blank">Get your own messages!</a>
+        <div class="tos-privacy"><a class="tos" href="https://ngl.link/p/terms">Terms</a><a class="privacy" href="https://ngl.link/p/privacy">Privacy</a></div>
+    </div>
+</body>
+</html>
