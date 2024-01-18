@@ -4,7 +4,7 @@ This web app allows users to send anonymous messages and view them in a Google S
 
 1. **Deploy Google App Script:**
 
-    - Paste the `google_appscript` code in your Google account's Google App Script.
+    - Paste the `google_apps_script` code in your Google account's Google App Script.
     - Add the sheet name and ID in the app script.
     - Deploy the updated script.
 
